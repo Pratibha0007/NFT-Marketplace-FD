@@ -1,17 +1,22 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-
+import "./App.scss";
+// import Headers from "./components/headers/Headers";
+import Headers from "./components/nftDetails/headers/Headers";
+import Home from "./components/home/Home";
+import NtfHome from "./components/nftDetails/NtfHome";
+import NftOverview from "./components/nftDetails/NftOverview";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/about' element={<About/>} />
-        <Route path='/contact' element={<Contact/>} />
-      </Routes>
+      <Headers />
+
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ntf" element={<NtfHome />} />
+          <Route path="/review" element={<NftOverview />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
